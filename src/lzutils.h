@@ -15,13 +15,14 @@
 #include <winsock2.h>
 #endif
 
+#include <stdlib.h>
 #include "lua.h"
 #include "lauxlib.h"
 
 #if defined(_WIN32)
 typedef SOCKET lzmq_os_sock_t;
 #else
-typedef int    lzmq_os_sock_t;
+typedef int64_t lzmq_os_sock_t;
 #endif
 
 #if LUA_VERSION_NUM >= 503 /* Lua 5.3 */
